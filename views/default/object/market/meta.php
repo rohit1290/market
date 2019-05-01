@@ -22,7 +22,7 @@ if($entity->cover_img == null){
 }
 $image_params = [
 	'alt' => $entity->getDisplayName(),
-	'src' => $cov_img->getIconURL(['size' => 'medium']),
+	'src' => $cov_img->getIconURL(['size' => 'small']),
 ];
 
 $image = elgg_view('output/img', $image_params);

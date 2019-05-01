@@ -18,9 +18,12 @@ if (!$user) {
 $selected_type = elgg_extract('subpage', $vars);
 
 $namevalue_pairs = [];
-$namevalue_pairs[] = ['name' => 'market_type', 'value' => $selected_type, 'operand' => '='];
-$namevalue_pairs[] = ['name' => 'status', 'value' => 'open', 'operand' => '='];
-
+if ($selected_type != "" && $selected_type != 'all') {
+	$namevalue_pairs[] = ['name' => 'market_type', 'value' => $selected_type, 'operand' => '='];
+}
+if($user->guid != elgg_get_logged_in_user_guid()) {
+	$namevalue_pairs[] = ['name' => 'status', 'value' => 'open', 'operand' => '='];
+}
 elgg_push_collection_breadcrumbs('object', 'market', $user);
 
 elgg_register_title_button('market', 'add', 'object', 'market');
@@ -36,11 +39,6 @@ $options = [
 	'no_results' => elgg_echo('market:none:found'),
 	'list_type_toggle' => false,
 	'item_class' => 'market-item-list',
-	'metadata_name_value_pairs' => [
-		'name' => 'status',
-		'value' => 'open',
-		'operand' => '=',
-	],
 ];
 
 // Get a list of market posts in a specific category
