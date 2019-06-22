@@ -6,4 +6,4 @@ Elgg marketplace for creating classifieds
 
 ## Requirements
 
-* hypeDropzone by Ismayil Khayredinov and ColdTrick fork (https://github.com/RiverVanRain/hypeDropzone) for Elgg 3.0
+* hypeDropzone by Rohit Gupta (https://github.com/rohit1290/hypeDropzone) for Elgg 3.0
