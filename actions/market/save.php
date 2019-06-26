@@ -131,9 +131,7 @@ if ($new_post) {
 	]);
 
 	elgg_trigger_event('publish', 'object', $post);
-}
-
-else {
+} else {
 	elgg_create_river_item([
 		'view' => 'river/object/market/update',
 		'action_type' => 'update',
