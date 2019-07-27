@@ -14,7 +14,8 @@ use ElggMarket;
 
 class Cron {
 	
-	public static function marketCronDaily($hook, $entity, $return, $params) {
+	public static function marketCronDaily(\Elgg\Hook $hook) {
+		$entity = $hook->getType();
 		
 		$market_ttl = elgg_get_plugin_setting('market_expire', 'market');
 		if ($market_ttl == 0) {

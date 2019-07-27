@@ -17,7 +17,9 @@ use ElggMenuItem;
  */
 class Menus {
 	
-	public static function marketSiteMenu($hook, $type, $return, $params) {
+	public static function marketSiteMenu(\Elgg\Hook $hook) {
+		$return = $hook->getValue();
+
 		$return[] = \ElggMenuItem::factory([
 			'name' => elgg_echo('market:title'),
 			'text' => elgg_echo('market:title'),
@@ -28,7 +30,10 @@ class Menus {
 		return $return;
 	}
 	
-	public static function marketOwnerBlock($hook, $type, $return, $params) {
+	public static function marketOwnerBlock(\Elgg\Hook $hook) {
+		$return = $hook->getValue();
+		$params = $hook->getParams();
+		
 		$entity = elgg_extract('entity', $params);
 		
 		if ($entity instanceof \ElggUser) {

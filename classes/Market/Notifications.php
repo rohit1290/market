@@ -12,7 +12,10 @@ namespace Market;
 
 class Notifications {
 	
-	public static function createMarket($hook, $type, $return_value, $params) {
+	public static function createMarket(\Elgg\Hook $hook) {
+		$return_value = $hook->getValue();
+		$params = $hook->getParams();
+		
 		if (!($return_value instanceof \Elgg\Notifications\Notification)) {
 			return;
 		}
