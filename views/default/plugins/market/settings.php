@@ -11,7 +11,7 @@
 $entity = elgg_extract('entity', $vars);
 
 $yes_no = [
-    1 => elgg_echo('option:yes'),
+	1 => elgg_echo('option:yes'),
 	0 => elgg_echo('option:no'),
 ];
 

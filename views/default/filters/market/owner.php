@@ -13,10 +13,10 @@ $filter_context = elgg_extract('filter_context', $vars);
 
 $tabs = [
 	'all' => "market/owner/$username/all",
-	'buy' => "market/owner/$username/buy", 
-	'sell' => "market/owner/$username/sell", 
-	'swap' => "market/owner/$username/swap", 
-	'free' => "market/owner/$username/free", 
+	'buy' => "market/owner/$username/buy",
+	'sell' => "market/owner/$username/sell",
+	'swap' => "market/owner/$username/swap",
+	'free' => "market/owner/$username/free",
 ];
 
 foreach ($tabs as $tab => $url) {

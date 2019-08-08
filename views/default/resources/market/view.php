@@ -22,7 +22,7 @@ elgg_push_collection_breadcrumbs('object', \ElggMarket::SUBTYPE);
 
 $category = $entity->marketcategory;
 
-if($category){
+if ($category) {
 	$name = urldecode($category);
 	$link = urlencode($category);
 	elgg_push_breadcrumb($name, "market/category/{$link}");

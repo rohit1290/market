@@ -21,7 +21,7 @@ $namevalue_pairs = [];
 if ($selected_type != "" && $selected_type != 'all') {
 	$namevalue_pairs[] = ['name' => 'market_type', 'value' => $selected_type, 'operand' => '='];
 }
-if($user->guid != elgg_get_logged_in_user_guid()) {
+if ($user->guid != elgg_get_logged_in_user_guid()) {
 	$namevalue_pairs[] = ['name' => 'status', 'value' => 'open', 'operand' => '='];
 }
 elgg_push_collection_breadcrumbs('object', 'market', $user);
@@ -44,9 +44,7 @@ $options = [
 // Get a list of market posts in a specific category
 if (!$selected_type || $selected_type == 'all') {
 	$filter_context = 'all';
-} 
-
-else {
+} else {
 	elgg_push_breadcrumb(elgg_echo("market:type:{$selected_type}"), "market/owner/{$username}/{$selected_type}");
 	$title .= ' - ' . elgg_echo("market:type:{$selected_type}");
 	$options['metadata_name_value_pairs'] = $namevalue_pairs;

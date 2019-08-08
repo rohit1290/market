@@ -36,7 +36,7 @@ class Hooks {
 		];
 		$files = elgg_get_entities($options);
 		
-		if(empty($files)){
+		if (empty($files)) {
 			return;
 		}
 		

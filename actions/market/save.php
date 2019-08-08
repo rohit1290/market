@@ -23,9 +23,7 @@ if ($guid) {
 	} else {
 		return elgg_error_response(elgg_echo('market:error:post_not_found'));
 	}
-}
-
-else {
+} else {
 	$post = new \ElggMarket();
 	$new_post = true;
 }
@@ -96,7 +94,7 @@ if (!$post->save()) {
 
 // handle icon upload
 $upload_guids = (array) get_input('upload_guids', []);
-if($post->cover_img == null){
+if ($post->cover_img == null) {
 	$post->cover_img = $upload_guids[0];
 }
 
@@ -137,7 +135,7 @@ if ($new_post) {
 		'action_type' => 'update',
 		'subject_guid' => $user->guid,
 		'object_guid' => $post->guid,
-	]);			
+	]);
 }
 
 return elgg_ok_response('', elgg_echo('market:posted'), $post->getURL());

@@ -26,9 +26,7 @@ if (elgg_is_xhr()) {
 	$title = elgg_format_element('h3', ['class' => 'modal-title'], $title);
 	echo elgg_format_element('div', ['class' => 'modal-header'], $title);
 	echo $content;
-}
-
-else {
+} else {
 	elgg_push_collection_breadcrumbs('object', \ElggMarket::SUBTYPE);
 	
 	elgg_register_title_button('market', 'add', 'object', 'market');

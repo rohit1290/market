@@ -35,7 +35,7 @@ if (!empty($marketcategories)) {
 	$options[''] = elgg_echo('market:choose');
 	foreach ($marketcategories as $option) {
 		$options[$option] = urldecode($option);
-	}		
+	}
 	unset($options['all']);
 	
 	echo elgg_view_field([
@@ -45,7 +45,6 @@ if (!empty($marketcategories)) {
 		'value' => elgg_extract('marketcategory', $vars),
 		'options_values' => $options,
 	]);
-	
 }
 
 //types
@@ -71,7 +70,7 @@ if (elgg_get_plugin_setting('market_custom', 'market') == 1 && !empty($custom_ch
 	$custom_options[''] = elgg_echo('market:choose');
 	foreach ($custom_choices as $custom_choice) {
 		$custom_options[$custom_choice] = urldecode($custom_choice);
-	}		
+	}
 	
 	echo elgg_view_field([
 		'#label' => elgg_echo('market:custom:select'),
@@ -100,7 +99,7 @@ if ($allowhtml == 0) {
 	$indicator = elgg_format_element('span', ['data-counter-indicator' => true, 'class' => 'market_charleft'], $numchars);
 	$counter = elgg_format_element('div', ['data-counter' => true, 'class' => 'market_characters_remaining'], $indicator . elgg_echo('market:charleft'));
 	
-	if($numchars == 0){
+	if ($numchars == 0) {
 		$counter = false;
 		$data_limit = false;
 	}
@@ -115,9 +114,7 @@ if ($allowhtml == 0) {
 		'value' => elgg_extract('description', $vars),
 		'#help' => $counter,
 	]);
-}
-
-else {
+} else {
 	echo elgg_view_field([
 		'#label' => elgg_echo('market:text'),
 		'#type' => 'longtext',
@@ -175,7 +172,7 @@ echo elgg_view_field([
 ]);
 
 // Option to delete uploded image
-if($post instanceof ElggMarket){
+if ($post instanceof ElggMarket) {
 	$options = [
 		'relationship' => 'attached',
 		'relationship_guid' => $post->guid,
@@ -186,8 +183,8 @@ if($post instanceof ElggMarket){
 		'limit' => 0,
 	];
 	$images = elgg_get_entities($options);
-	if(count((array)$images) > 0){
-		echo '<div class="elgg-dropzone-preview dz-processing dz-image-preview dz-success dz-complete elgg-dropzone-success">'; 
+	if (count((array) $images) > 0) {
+		echo '<div class="elgg-dropzone-preview dz-processing dz-image-preview dz-success dz-complete elgg-dropzone-success">';
 		foreach ($images as $image) {
 			$image_params = [
 				'alt' => $image->getDisplayName(),
@@ -202,9 +199,9 @@ if($post instanceof ElggMarket){
 				'rel' => 'market-gallery',
 			]);
 			
-			$del_href = elgg_generate_action_url('market/del_img',['guid' => $image->guid]);
-			$update_cover = elgg_generate_action_url('market/change_cover',['guid' => $image->guid]);
-			echo 
+			$del_href = elgg_generate_action_url('market/del_img', ['guid' => $image->guid]);
+			$update_cover = elgg_generate_action_url('market/change_cover', ['guid' => $image->guid]);
+			echo
 			'	<div class="elgg-dropzone-item-props">
 					<div class="elgg-dropzone-thumbnail">'.$icon_view.'</div>
 					<div class="elgg-dropzone-filename">

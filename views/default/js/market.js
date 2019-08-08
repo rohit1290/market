@@ -3,7 +3,7 @@ define(['elgg', 'jquery', 'elgg/lightbox'], function (elgg, $, lightbox) {
 		var $form = $('form[name="marketForm"]');
 		var $checkbox = $('.elgg-input-checkbox').length;
 		$form.on('submit', function(e) {
-			if($checkbox && !($('.elgg-input-checkbox').prop('checked'))) {
+			if ($checkbox && !($('.elgg-input-checkbox').prop('checked'))) {
 				alert(elgg.echo('market:accept:terms:error'));
 				$('.elgg-input-checkbox').focus();
 				e.preventDefault(); //prevent form from submitting
@@ -20,15 +20,15 @@ define(['elgg', 'jquery', 'elgg/lightbox'], function (elgg, $, lightbox) {
 			if (remaining < 0) {
 					$counter.addClass('market-counter-overflow');
 					$form.find('[type="submit"]').prop('disabled', true).addClass('elgg-state-disabled');
-				} else {
-					$counter.removeClass('market-counter-overflow');
-					$form.find('[type="submit"]').prop('disabled', false).removeClass('elgg-state-disabled');
-				}
+			} else {
+				$counter.removeClass('market-counter-overflow');
+				$form.find('[type="submit"]').prop('disabled', false).removeClass('elgg-state-disabled');
+			}
 		});
 
 		$('#market-type').change(function() {
 			var value = $(this).val();
-			$('#market-price').prop('readonly', false);	
+			$('#market-price').prop('readonly', false);
 			if (value == 'free') {
 				$('#market-price').val('0');
 				$('#market-price').prop('readonly', true);

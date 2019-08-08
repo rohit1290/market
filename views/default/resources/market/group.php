@@ -45,9 +45,7 @@ $options = [
 // Get a list of market posts in a specific category
 if (!$selected_type || $selected_type == 'all') {
 	$filter_context = 'all';
-} 
-
-else {
+} else {
 	elgg_push_breadcrumb(elgg_echo("market:type:{$selected_type}"), "market/group/{$group_guid}/{$selected_type}");
 	$title .= ' - ' . elgg_echo("market:type:{$selected_type}");
 	$options['metadata_name_value_pairs'] = $namevalue_pairs;

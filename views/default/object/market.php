@@ -27,9 +27,7 @@ if (elgg_extract('full_view', $vars)) {
 	$params = $params + $vars;
 	
 	echo elgg_view('object/elements/full', $params);
-}
-
-else {
+} else {
 	// brief view
 	$params = [
 		'content' => elgg_view('object/market/meta', $vars),

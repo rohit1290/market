@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $guid = get_input('guid');
 $image = get_entity($guid);
@@ -10,9 +10,9 @@ if (!$image instanceof ElggFile || !$image->canEdit()) {
 $entity = get_entity($image->container_guid);
 
 $entity->cover_img = $image->guid;
-if($entity->save()){
-  system_message('market:icon:upload:update');
+if ($entity->save()) {
+	system_message('market:icon:upload:update');
 }
 
 forward(REFERRER);
- ?>
+	?>

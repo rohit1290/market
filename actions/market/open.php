@@ -24,9 +24,7 @@ if ($guid) {
 		]);
 		
 		return elgg_ok_response('', elgg_echo('market:action:open'));
-	} 
-	
-	else {
+	} else {
 		return elgg_error_response(elgg_echo('market:none:found'));
 	}
 }

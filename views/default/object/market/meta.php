@@ -15,7 +15,7 @@ if (!$entity instanceof \ElggMarket) {
 }
 
 //cover icon
-if($entity->cover_img == null){
+if ($entity->cover_img == null) {
 	$cov_img = $entity;
 } else {
 	$cov_img = get_entity($entity->cover_img);
@@ -36,7 +36,7 @@ $cover_icon = elgg_view('output/url', [
 $meta = '';
 
 //category
-if ($entity->marketcategory){
+if ($entity->marketcategory) {
 	$label = elgg_format_element('strong', ['class' => 'mrs'], elgg_echo('market:category'));
 	$href = urlencode($entity->marketcategory);
 	$meta .= elgg_format_element('div', [], $label . elgg_view('output/url', [

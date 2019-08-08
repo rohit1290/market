@@ -37,9 +37,7 @@ $options = [
 if (!$selected_type || $selected_type == 'all') {
 	$title = elgg_echo('market:type:all');
 	$filter_context = 'all';
-} 
-
-else {
+} else {
 	elgg_push_breadcrumb(elgg_echo("market:type:{$selected_type}"), "market/all/{$selected_type}");
 	$title = elgg_echo("market:type:{$selected_type}");
 	$options['metadata_name_value_pairs'] = $namevalue_pairs;

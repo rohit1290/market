@@ -23,7 +23,7 @@ $options = [
 ];
 $count = elgg_get_entities($options);
 
-$image_guids = array(ELGG_ENTITIES_NO_VALUE);
+$image_guids = [ELGG_ENTITIES_NO_VALUE];
 
 if ($count) {
 	unset($options['count']);

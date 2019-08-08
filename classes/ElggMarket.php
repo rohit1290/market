@@ -31,7 +31,7 @@ class ElggMarket extends ElggObject {
 	
 	public function formatAttachments() {
 
-		$attachments = array();
+		$attachments = [];
 
 		$attachments[] = $this->html;
 
@@ -44,7 +44,7 @@ class ElggMarket extends ElggObject {
 	}
 
 	public function getAttachments($format = null, $size = 'small') {
-		$attachment_tags = array();
+		$attachment_tags = [];
 
 		$attachments = new ElggBatch('elgg_get_entities', [
 			'relationship' => 'attached',

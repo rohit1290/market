@@ -19,8 +19,8 @@ function market_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'marketSiteMenu']);
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', [Menus::class, 'marketOwnerBlock']);
 	
-    //Sidebar
-	if(elgg_in_context('market')){
+	//Sidebar
+	if (elgg_in_context('market')) {
 		elgg_extend_view('page/elements/sidebar', 'market/sidebar', 100);
 	}
 	

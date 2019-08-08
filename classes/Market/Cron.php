@@ -58,7 +58,7 @@ class Cron {
 			$entity->delete;
 		}
 
-		echo "Daily market cron completed\n";	
+		echo "Daily market cron completed\n";
 		// restore access
 		elgg_set_ignore_access($ia);
 	}

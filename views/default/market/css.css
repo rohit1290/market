@@ -6,11 +6,11 @@
 	margin-bottom: 0 !important;
 }
 .market-category-menu li > a, .market-category-menu li > a:hover{
-    text-decoration: none;
+	text-decoration: none;
 }
 .market-category-menu li > a.selected {
-    color: #333;
-    background-color: #e6e6ea;
+	color: #333;
+	background-color: #e6e6ea;
 	text-decoration: none;
 }
 .market-attachments{
@@ -39,16 +39,16 @@
 }
 .market_characters_remaining {
 	bottom: 0;
-    color: #666;
-    font-size: 11px;
-    left: 0;
-    line-height: 20px;
-    padding: 0 8px;
-    text-align: right;
-    vertical-align: middle;
+	color: #666;
+	font-size: 11px;
+	left: 0;
+	line-height: 20px;
+	padding: 0 8px;
+	text-align: right;
+	vertical-align: middle;
 }
 .market_charleft {
-    margin: 0 5px 0 0;
+	margin: 0 5px 0 0;
 }
 .market-counter-overflow {
 	color: #f00!important;

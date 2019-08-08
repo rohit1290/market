@@ -26,11 +26,10 @@ if ($attachments) {
 
 //buttons
 if ($entity->owner_guid == elgg_get_logged_in_user_guid() || $entity->canEdit()) {
-	if($entity->status != 'sold'){
+	if ($entity->status != 'sold') {
 		$href = 'action/market/sold?guid=' . $entity->guid;
 		$text = elgg_echo('market:mark:sold');
-	}
-	else {
+	} else {
 		$href = 'action/market/open?guid=' . $entity->guid;
 		$text = elgg_echo('market:mark:open', [$entity->market_type]);
 	}
@@ -58,8 +57,7 @@ echo elgg_format_element('div', ['class' => 'mtm'], $mark_status . $send_message
 //description
 if (elgg_get_plugin_setting('market_allowhtml', 'market') == 0) {
 	$description = elgg_autop(parse_urls(strip_tags($entity->description)));
-}
-else {
+} else {
 	$description = elgg_view('output/longtext', [
 		'value' => $entity->description
 	]);
