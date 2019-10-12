@@ -17,50 +17,48 @@ class Cron {
 	public static function marketCronDaily(\Elgg\Hook $hook) {
 		$entity = $hook->getType();
 		
-		$market_ttl = elgg_get_plugin_setting('market_expire', 'market');
-		if ($market_ttl == 0) {
-			return true;
-		}
-		$time_limit = strtotime("-$market_ttl months");
-		
-		// ignore access
-		$ia = elgg_set_ignore_access(true);
-		
-		$entities = elgg_get_entities([
-			'type' => 'object',
-			'subtype' => ElggMarket::SUBTYPE,
-			'limit' => false,
-			'created_time_upper' => $time_limit,
-			'batch' => true,
-			'batch_inc_offset' => false,
-		]);
-		
-		foreach ($entities as $entity) {
-			$date = date('j/n-Y', $entity->time_created);
-			$title = $entity->title;
-			$owner = $entity->getOwnerEntity();
+		elgg_call(ELGG_IGNORE_ACCESS, function() use ($entity) {
 			
-			$subject = elgg_echo('market:expire:subject', [], $owner->language);
-			$body = elgg_echo('market:expire:body', [$owner->name, $title, $date, $market_ttl], $owner->language);
+			$market_ttl = elgg_get_plugin_setting('market_expire', 'market');
+			if ($market_ttl == 0) {
+				return true;
+			}
+			$time_limit = strtotime("-$market_ttl months");
 			
-			notify_user(
-				$owner->guid,
-				elgg_get_site_entity()->guid,
-				$subject,
-				$body,
-				[
-					'object' => $entity,
-					'action' => 'delete',
-				],
-				'site'
-			);
+			$entities = elgg_get_entities([
+				'type' => 'object',
+				'subtype' => ElggMarket::SUBTYPE,
+				'limit' => false,
+				'created_time_upper' => $time_limit,
+				'batch' => true,
+				'batch_inc_offset' => false,
+			]);
 			
-			$entity->delete;
-		}
+			foreach ($entities as $entity) {
+				$date = date('j/n-Y', $entity->time_created);
+				$title = $entity->title;
+				$owner = $entity->getOwnerEntity();
+				
+				$subject = elgg_echo('market:expire:subject', [], $owner->language);
+				$body = elgg_echo('market:expire:body', [$owner->name, $title, $date, $market_ttl], $owner->language);
+				
+				notify_user(
+					$owner->guid,
+					elgg_get_site_entity()->guid,
+					$subject,
+					$body,
+					[
+						'object' => $entity,
+						'action' => 'delete',
+					],
+					'site'
+				);
+				
+				$entity->delete;
+			}
 
-		echo "Daily market cron completed\n";
-		// restore access
-		elgg_set_ignore_access($ia);
+			echo "Daily market cron completed\n";
+		});
 	}
 	
 }
