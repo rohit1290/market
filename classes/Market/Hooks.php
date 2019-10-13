@@ -12,7 +12,9 @@ namespace Market;
 
 class Hooks {
 	
-	public static function deleteMarket($event, $type, \ElggObject $entity) {
+	public static function deleteMarket(\Elgg\Event $event) {
+	$entity = $event->getObject();
+
 		if (!$entity instanceof \ElggMarket) {
 			return;
 		}
