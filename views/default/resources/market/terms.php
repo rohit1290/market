@@ -28,14 +28,14 @@ if (elgg_is_xhr()) {
 	echo $content;
 } else {
 	elgg_push_collection_breadcrumbs('object', \ElggMarket::SUBTYPE);
-	
+
 	elgg_register_title_button('market', 'add', 'object', 'market');
 
-	$layout = elgg_view_layout('content', [
+	$layout = elgg_view_layout('default', [
 		'title' => $title,
 		'content' => $content,
 		'filter' => false,
 	]);
-	
+
 	echo elgg_view_page($title, $layout);
 }

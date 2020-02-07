@@ -43,7 +43,7 @@ if ($marketmax != 0 && $marketactive >= $marketmax && !elgg_is_admin_logged_in()
 
 elgg_push_collection_breadcrumbs('object', \ElggMarket::SUBTYPE, $container);
 elgg_push_breadcrumb(elgg_echo('add:object:market'));
- 
+
 $title = elgg_echo('market:add:title');
 
 $form_vars = [
@@ -58,6 +58,6 @@ $params = [
 	'title' => $title,
 ];
 
-$body = elgg_view_layout('one_sidebar', $params);
+$body = elgg_view_layout('default', $params);
 
 echo elgg_view_page($title, $body);

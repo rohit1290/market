@@ -36,6 +36,6 @@ $params = [
 	'title' => $title,
 ];
 
-$body = elgg_view_layout('one_sidebar', $params);
+$body = elgg_view_layout('default', $params);
 
 echo elgg_view_page($title, $body);

@@ -54,7 +54,7 @@ if (!$selected_type || $selected_type == 'all') {
 
 $content = elgg_list_entities($options);
 
-$layout = elgg_view_layout('content', [
+$layout = elgg_view_layout('default', [
 	'title' => $title,
 	'content' => $content,
 	'filter' => elgg_view('filters/market/group', [

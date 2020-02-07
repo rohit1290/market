@@ -17,18 +17,18 @@ use ElggMenuItem;
  */
 class Menus {
 
-	public static function marketSiteMenu(\Elgg\Hook $hook) {
-		$return = $hook->getValue();
-
-		$return[] = \ElggMenuItem::factory([
-			'name' => elgg_echo('market:title'),
-			'text' => elgg_echo('market:title'),
-			'href' => 'market',
-			'icon' => 'credit-card',
-		]);
-
-		return $return;
-	}
+	// public static function marketSiteMenu(\Elgg\Hook $hook) {
+	// 	$return = $hook->getValue();
+	// 
+	// 	$return[] = \ElggMenuItem::factory([
+	// 		'name' => elgg_echo('market:title'),
+	// 		'text' => elgg_echo('market:title'),
+	// 		'href' => 'market',
+	// 		'icon' => 'credit-card',
+	// 	]);
+	// 
+	// 	return $return;
+	// }
 
 	public static function marketOwnerBlock(\Elgg\Hook $hook) {
 		$return = $hook->getValue();

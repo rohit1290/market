@@ -33,7 +33,7 @@ $content = elgg_list_entities([
 	'list_type_toggle' => false,
 ]);
 
-$layout = elgg_view_layout('content', [
+$layout = elgg_view_layout('default', [
 	'title' => $title,
 	'content' => $content,
 	'filter' => false,
