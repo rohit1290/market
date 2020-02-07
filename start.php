@@ -18,12 +18,12 @@ function market_init() {
 	// Menus
 	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'marketSiteMenu']);
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', [Menus::class, 'marketOwnerBlock']);
-	
+
 	//Sidebar
 	if (elgg_in_context('market')) {
 		elgg_extend_view('page/elements/sidebar', 'market/sidebar', 100);
 	}
-	
+
 	//Groups
 	elgg()->group_tools->register('market', [
 		'default_on' => true,
@@ -35,7 +35,7 @@ function market_init() {
 
 	//JS
 	elgg_require_js('market');
-	
+
 	//Hooks
 	elgg_register_event_handler('delete', 'object', [Hooks::class, 'deleteMarket']);
 
@@ -45,7 +45,7 @@ function market_init() {
 
 	//Cron job
 	elgg_register_plugin_hook_handler('cron', 'daily', [Cron::class, 'marketCronDaily']);
-	
+
 	//Likes
 	elgg_register_plugin_hook_handler('likes:is_likable', 'object:market', 'Elgg\Values::getTrue');
 }

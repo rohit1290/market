@@ -48,7 +48,7 @@ if ($entity->marketcategory) {
 //type
 $label = elgg_format_element('strong', ['class' => 'mrs'], elgg_echo('market:type'));
 $meta .= elgg_format_element('div', [], $label . elgg_echo("market:type:{$entity->market_type}"));
-	
+
 //custom choices
 if ((elgg_get_plugin_setting('market_custom', 'market') == 1) && $entity->custom) {
 	$label = elgg_format_element('strong', ['class' => 'mrs'], elgg_echo('market:custom:text'));
@@ -67,7 +67,7 @@ if ((elgg_get_plugin_setting('location', 'market') == 1) && $entity->location) {
 $currency = elgg_get_plugin_setting('market_currency', 'market');
 $label = elgg_format_element('strong', ['class' => 'mrs'], elgg_echo('market:price'));
 $meta .= elgg_format_element('div', [], $label . $currency . $entity->price);
-	
+
 //tags
 if ($entity->tags) {
 	$meta .= elgg_format_element('div', [], elgg_view('output/tags', [

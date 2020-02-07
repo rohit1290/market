@@ -16,7 +16,7 @@ use ElggMenuItem;
  * @access private
  */
 class Menus {
-	
+
 	public static function marketSiteMenu(\Elgg\Hook $hook) {
 		$return = $hook->getValue();
 
@@ -26,16 +26,16 @@ class Menus {
 			'href' => 'market',
 			'icon' => 'credit-card',
 		]);
-		
+
 		return $return;
 	}
-	
+
 	public static function marketOwnerBlock(\Elgg\Hook $hook) {
 		$return = $hook->getValue();
 		$params = $hook->getParams();
-		
+
 		$entity = elgg_extract('entity', $params);
-		
+
 		if ($entity instanceof \ElggUser) {
 			$return[] = \ElggMenuItem::factory([
 				'name' => 'market',
@@ -43,7 +43,7 @@ class Menus {
 				'href' => "market/owner/{$entity->username}",
 			]);
 		}
-		
+
 		if ($entity instanceof \ElggGroup) {
 			if ($entity->market_enable == 'yes') {
 				$return[] = \ElggMenuItem::factory([
@@ -53,8 +53,8 @@ class Menus {
 				]);
 			}
 		}
-		
+
 		return $return;
 	}
-	
+
 }

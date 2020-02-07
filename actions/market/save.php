@@ -120,7 +120,7 @@ elgg_clear_sticky_form('market');
 
 if ($new_post) {
 	$post->status = 'open';
-	
+
 	elgg_create_river_item([
 		'view' => 'river/object/market/create',
 		'action_type' => 'create',

@@ -9,14 +9,14 @@
  * @version 3.0
  */
 class ElggMarket extends ElggObject {
-	
+
 	const SUBTYPE = 'market';
-	
+
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
 		$this->attributes['subtype'] = self::SUBTYPE;
 	}
-	
+
 	public function canComment($user_guid = 0, $default = null) {
 		$result = parent::canComment($user_guid, $default);
 		if (!$result) {
@@ -25,10 +25,10 @@ class ElggMarket extends ElggObject {
 		if ($this->comments_on === 'Off') {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	public function formatAttachments() {
 
 		$attachments = [];

@@ -33,7 +33,7 @@ if ($entity->owner_guid == elgg_get_logged_in_user_guid() || $entity->canEdit())
 		$href = 'action/market/open?guid=' . $entity->guid;
 		$text = elgg_echo('market:mark:open', [$entity->market_type]);
 	}
-	
+
 	$mark_status = elgg_view('output/url', [
 		'class' => 'elgg-button elgg-button-action mrs',
 		'href' => $href,

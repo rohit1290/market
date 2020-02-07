@@ -8,7 +8,7 @@
  * @link https://wzm.me
  * @version 3.0
  */
- 
+
 function market_prepare_form_vars($post = null) {
 
 	// input names => defaults

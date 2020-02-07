@@ -13,18 +13,18 @@ namespace Market;
 use ElggMarket;
 
 class Cron {
-	
+
 	public static function marketCronDaily(\Elgg\Hook $hook) {
 		$entity = $hook->getType();
-		
+
 		elgg_call(ELGG_IGNORE_ACCESS, function() use ($entity) {
-			
+
 			$market_ttl = elgg_get_plugin_setting('market_expire', 'market');
 			if ($market_ttl == 0) {
 				return true;
 			}
 			$time_limit = strtotime("-$market_ttl months");
-			
+
 			$entities = elgg_get_entities([
 				'type' => 'object',
 				'subtype' => ElggMarket::SUBTYPE,
@@ -33,15 +33,15 @@ class Cron {
 				'batch' => true,
 				'batch_inc_offset' => false,
 			]);
-			
+
 			foreach ($entities as $entity) {
 				$date = date('j/n-Y', $entity->time_created);
 				$title = $entity->title;
 				$owner = $entity->getOwnerEntity();
-				
+
 				$subject = elgg_echo('market:expire:subject', [], $owner->language);
 				$body = elgg_echo('market:expire:body', [$owner->name, $title, $date, $market_ttl], $owner->language);
-				
+
 				notify_user(
 					$owner->guid,
 					elgg_get_site_entity()->guid,
@@ -53,12 +53,12 @@ class Cron {
 					],
 					'site'
 				);
-				
+
 				$entity->delete;
 			}
 
 			echo "Daily market cron completed\n";
 		});
 	}
-	
+
 }

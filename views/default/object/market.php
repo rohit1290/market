@@ -25,7 +25,7 @@ if (elgg_extract('full_view', $vars)) {
 		'show_navigation' => true,
 	];
 	$params = $params + $vars;
-	
+
 	echo elgg_view('object/elements/full', $params);
 } else {
 	// brief view

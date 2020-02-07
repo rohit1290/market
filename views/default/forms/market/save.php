@@ -28,7 +28,7 @@ echo elgg_view_field([
 	'value' => elgg_extract('title', $vars),
 ]);
 
-	
+
 //categories
 if (!empty($marketcategories)) {
 	$options = [];
@@ -37,7 +37,7 @@ if (!empty($marketcategories)) {
 		$options[$option] = urldecode($option);
 	}
 	unset($options['all']);
-	
+
 	echo elgg_view_field([
 		'#label' => elgg_echo('market:categories:choose'),
 		'#type' => 'select',
@@ -71,7 +71,7 @@ if (elgg_get_plugin_setting('market_custom', 'market') == 1 && !empty($custom_ch
 	foreach ($custom_choices as $custom_choice) {
 		$custom_options[$custom_choice] = urldecode($custom_choice);
 	}
-	
+
 	echo elgg_view_field([
 		'#label' => elgg_echo('market:custom:select'),
 		'#type' => 'select',
@@ -95,15 +95,15 @@ if (elgg_get_plugin_setting('location', 'market') == 1) {
 //description
 if ($allowhtml == 0) {
 	$data_limit = $numchars;
-	
+
 	$indicator = elgg_format_element('span', ['data-counter-indicator' => true, 'class' => 'market_charleft'], $numchars);
 	$counter = elgg_format_element('div', ['data-counter' => true, 'class' => 'market_characters_remaining'], $indicator . elgg_echo('market:charleft'));
-	
+
 	if ($numchars == 0) {
 		$counter = false;
 		$data_limit = false;
 	}
-	
+
 	echo elgg_view_field([
 		'#label' => elgg_echo('market:text'),
 		'#type' => 'plaintext',
@@ -198,7 +198,7 @@ if ($post instanceof ElggMarket) {
 				'class' => 'elgg-lightbox-photo',
 				'rel' => 'market-gallery',
 			]);
-			
+
 			$del_href = elgg_generate_action_url('market/del_img', ['guid' => $image->guid]);
 			$update_cover = elgg_generate_action_url('market/change_cover', ['guid' => $image->guid]);
 			echo

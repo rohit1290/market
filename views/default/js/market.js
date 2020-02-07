@@ -9,7 +9,7 @@ define(['elgg', 'jquery', 'elgg/lightbox'], function (elgg, $, lightbox) {
 				e.preventDefault(); //prevent form from submitting
 			}
 		});
-		
+
 		$('#plaintext-description').keyup(function () {
 			var $textarea = $(this);
 			var limit = $textarea.data('limit');
@@ -37,11 +37,11 @@ define(['elgg', 'jquery', 'elgg/lightbox'], function (elgg, $, lightbox) {
 				$('#market-price').prop('readonly', true);
 			}
 		});
-		
+
 		var options = {
 			photo: true,
 		};
-		
+
 		lightbox.bind('.elgg-lightbox-photo, a[rel="market-gallery"]', options, false);
 	});
 });

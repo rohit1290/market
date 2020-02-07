@@ -29,7 +29,7 @@ echo elgg_view_field([
 			'value' => $entity->market_max ? $entity->market_max : 0,
 			'#help' => elgg_echo('settings:market:max:posts:help'),
 		],
-		
+
 		[
 			'#type' => 'select',
 			'#label' => elgg_echo('settings:market:adminonly'),
@@ -37,14 +37,14 @@ echo elgg_view_field([
 			'value' => $entity->market_adminonly,
 			'options_values' => $no_yes,
 		],
-		
+
 		[
 			'#type' => 'text',
 			'#label' => elgg_echo('settings:market:currency'),
 			'name' => 'params[market_currency]',
 			'value' => $entity->market_currency ? $entity->market_currency : '$',
 		],
-		
+
 		[
 			'#type' => 'select',
 			'#label' => elgg_echo('settings:market:allowhtml'),
@@ -52,7 +52,7 @@ echo elgg_view_field([
 			'value' => $entity->market_allowhtml,
 			'options_values' => $yes_no,
 		],
-		
+
 		[
 			'#type' => 'number',
 			'#label' => elgg_echo('settings:market:numchars'),
@@ -60,7 +60,7 @@ echo elgg_view_field([
 			'value' => $entity->market_numchars ? $entity->market_numchars : 0,
 			'#help' => elgg_echo('settings:market:numchars:help'),
 		],
-		
+
 		[
 			'#type' => 'select',
 			'#label' => elgg_echo('settings:market:pmbutton'),
@@ -68,7 +68,7 @@ echo elgg_view_field([
 			'value' => $entity->market_pmbutton,
 			'options_values' => $no_yes,
 		],
-		
+
 		[
 			'#type' => 'select',
 			'#label' => elgg_echo('settings:market:location'),
@@ -76,7 +76,7 @@ echo elgg_view_field([
 			'value' => $entity->location,
 			'options_values' => $no_yes,
 		],
-		
+
 		[
 			'#type' => 'select',
 			'#label' => elgg_echo('settings:market:comments'),
@@ -135,7 +135,7 @@ echo elgg_view_field([
 			'options_values' => $no_yes,
 			'#help' => elgg_echo('settings:market:custom:help'),
 		],
-		
+
 		[
 			'#type' => 'tags',
 			'#label' => elgg_echo('settings:market:custom:choices'),
@@ -185,7 +185,7 @@ echo elgg_view_field([
 			'value' => $entity->market_terms_enable,
 			'options_values' => $no_yes,
 		],
-		
+
 		[
 			'#type' => 'longtext',
 			'#label' => elgg_echo('settings:market:terms:text'),

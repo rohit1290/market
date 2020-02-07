@@ -32,4 +32,4 @@ if ($entity->cover_img == $guid) {
 }
 
 forward(REFERRER);
-	?>
+	

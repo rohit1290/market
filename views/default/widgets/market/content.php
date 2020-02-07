@@ -8,7 +8,7 @@
  * @link https://wzm.me
  * @version 3.0
  */
- 
+
 $widget = elgg_extract('entity', $vars);
 
 $num_display = (int) $widget->num_display ?: 4;

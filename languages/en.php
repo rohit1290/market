@@ -10,7 +10,7 @@
  */
 return [
 
-	// Menu items and titles	
+	// Menu items and titles
 	'market' => "Market",
 	'collection:object:market' => "Market",
 	'collection:object:market:owner' => "%s's ads",
@@ -32,7 +32,7 @@ return [
 	'item:object:market' => 'Market ad',
 	'market:none:found' => 'No market ad found',
 	'market:cover:update:text' => 'Update Cover',
-	
+
 	'add:object:market' => "Create new ad",
 	'market:read' => "View ad",
 	'market:mark:sold' => 'Mark as Sold',
@@ -45,12 +45,12 @@ return [
 	'market:strapline' => "Created",
 	'market:action:open' => "Item marked as open",
 	'market:action:sold' => "Item marked as sold",
-	
+
 	'market:icon:upload:new' => "Add cover icon to your ad",
 	'market:icon:upload:update' => "Cover icon updated for your ad",
 	'market:icon:upload:edit' => "Edit cover icon of your ad",
 	'market:uploadimages' => "Add images to your ad.",
-	
+
 	'market:pmbuttontext' => "Send Private Message",
 	'market:price' => "Price",
 	'market:price:help' => "In %s",
@@ -67,7 +67,7 @@ return [
 	'market:charleft' => "characters left",
 	'market:accept:terms' => "I have read and accepted the %s",
 	'market:terms:title' => "Terms of use",
-	
+
 	//Notifications
 	'market:notify:subject:created' => "New Market ad was created",
 	'market:notify:summary:created' => "New Market ad was created",
@@ -83,7 +83,7 @@ View the Market ad here: %s
 	'market:group' => "Group market",
 	'market:none' => "No market",
 	'market:enablemarket' => "Enable group market",
-	
+
 	//Widget
 	'market:widget' => "Market",
 	'market:widget:description' => "Showcase your ads on The Market",
@@ -105,7 +105,7 @@ View the Market ad here: %s
 	'market:image:invalid' => "Not a valid market image file.",
 	'market:status:sold' => 'The item has been marked as sold by the owner',
 
-	// Error messages	
+	// Error messages
 	'market:save:failure' => "Your Market ad could not be saved. Please try again.",
 	'market:error:missing:title' => "Error: missing title",
 	'market:error:missing:description' => "Error: Mmissing description",
@@ -135,14 +135,14 @@ View the Market ad here: %s
 	'settings:market:categories' => 'Market categories',
 	'settings:market:categories:help' => 'Separate categories with commas',
 	'settings:market:image_size' => 'Select image size to show in the ads',
-	
-	'settings:market:settings:type' => 'Enable market ad types (buy/sell/swap/free)',	
+
+	'settings:market:settings:type' => 'Enable market ad types (buy/sell/swap/free)',
 	'market:type:all' => "All ads",
 	'market:type:buy' => "Buying",
 	'market:type:sell' => "Selling",
 	'market:type:swap' => "Swap",
 	'market:type:free' => "Free",
-	
+
 	'settings:market:expire' => "Ads expire settings",
 	'settings:market:expire:date' => "Auto delete market ads older than:",
 	'settings:market:expire:month' => "month",
@@ -174,5 +174,5 @@ This happens automatically when market ad are older than %s month(s).",
 	'settings:market:custom:choices:help' => "Separate choices with commas",
 	'market:custom:select' => "Item condition",
 	'market:custom:text' => "Condition",
-	
+
 ];

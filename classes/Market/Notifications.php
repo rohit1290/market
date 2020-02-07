@@ -11,27 +11,27 @@
 namespace Market;
 
 class Notifications {
-	
+
 	public static function createMarket(\Elgg\Hook $hook) {
 		$return_value = $hook->getValue();
 		$params = $hook->getParams();
-		
+
 		if (!($return_value instanceof \Elgg\Notifications\Notification)) {
 			return;
 		}
-		
+
 		$event = elgg_extract('event', $params);
 		$recipient = elgg_extract('recipient', $params);
 		$language = elgg_extract('language', $params);
-		
+
 		if (!($event instanceof \Elgg\Notifications\Event) || !($recipient instanceof \ElggUser)) {
 			return;
 		}
-		
+
 		$actor = $event->getActor();
 		$market = $event->getObject();
 		$market_type = elgg_echo("market:type:{$market->market_type}");
-		
+
 		$return_value->subject = elgg_echo('market:notify:subject:created', [], $language);
 		$return_value->summary = elgg_echo('market:notify:summary:created', [], $language);
 		$return_value->body = elgg_echo('market:notify:body:created', [
@@ -41,7 +41,7 @@ class Notifications {
 			$market->description,
 			$market->getURL(),
 		], $language);
-		
+
 		return $return_value;
 	}
 

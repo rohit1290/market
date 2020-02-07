@@ -22,7 +22,7 @@ if ($guid) {
 			'subject_guid' => elgg_get_logged_in_user_guid(),
 			'object_guid' => $guid,
 		]);
-		
+
 		return elgg_ok_response('', elgg_echo('market:action:open'));
 	} else {
 		return elgg_error_response(elgg_echo('market:none:found'));

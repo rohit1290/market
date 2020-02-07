@@ -11,22 +11,22 @@
 namespace Market;
 
 class Hooks {
-	
+
 	public static function deleteMarket(\Elgg\Event $event) {
 	$entity = $event->getObject();
 
 		if (!$entity instanceof \ElggMarket) {
 			return;
 		}
-		
+
 		if (!$entity->guid) {
 			return;
 		}
-		
+
 		if (!$entity->canEdit()) {
 			return;
 		}
-		
+
 		$options = [
 			'relationship' => 'attached',
 			'relationship_guid' => $entity->guid,
@@ -37,11 +37,11 @@ class Hooks {
 			'limit' => 0,
 		];
 		$files = elgg_get_entities($options);
-		
+
 		if (empty($files)) {
 			return;
 		}
-		
+
 		foreach ($files as $file) {
 			$file->delete();
 		}
