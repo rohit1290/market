@@ -14,6 +14,7 @@ class Market extends DefaultPluginBootstrap {
 			'text' => elgg_echo('market:title'),
 			'href' => 'market',
 			'icon' => 'credit-card',
+      'priority' => 200,
   	]);
 
   	// elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'marketSiteMenu']);
